@@ -1,0 +1,244 @@
+/* 🌿 Base layout */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  font-family: "Poppins", sans-serif;
+}
+
+/* 🌿 Full-page background */
+body {
+  background-image: url("../assets/Background.png"); /* make sure file name matches */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+/* 🌿 Page container */
+.service-details-page {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  box-sizing: border-box;
+  padding: 2rem 4rem;
+  color: #222;
+  /* 🔥 removed background overlay */
+}
+
+/* 🌸 Header Section */
+.service-header {
+  text-align: center;
+  max-width: 900px;
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.service-header h1 {
+  font-size: 2rem;
+  color: #0a1931;
+  margin-bottom: 0.8rem;
+  text-shadow: 0 2px 6px rgba(255, 255, 255, 0.6);
+}
+
+.service-header p {
+  color: #0a0a0a;
+  font-size: 1.05rem;
+  line-height: 1.5;
+  font-weight: 500;
+  text-shadow: 0 1px 3px rgba(255, 255, 255, 0.6);
+}
+
+/* 👷‍♂️ Workers Section */
+.workers-section {
+  text-align: center;
+  width: 100%;
+}
+
+.workers-section h2 {
+  margin-bottom: 1.5rem;
+  color: #0a1931;
+  font-size: 1.6rem;
+  font-weight: 600;
+  text-shadow: 0 1px 4px rgba(255, 255, 255, 0.6);
+}
+
+/* 🧱 Worker Cards Grid */
+.workers-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 1rem;
+  width: 100%;
+  max-width: 1300px;
+}
+
+/* 🧑‍🔧 Individual Worker Card */
+.worker-card {
+  background: rgba(255, 255, 255, 0.93);
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: all 0.25s ease-in-out;
+  text-align: center;
+  width: 270px;
+  backdrop-filter: blur(2px);
+}
+
+.worker-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
+}
+
+.worker-card h3 {
+  color: #0a1931;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.worker-card p {
+  margin: 0.3rem 0;
+  font-size: 0.95rem;
+}
+
+/* ⭐ Book Now button */
+.book-btn {
+  background-color: #0a1931;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  margin-top: 0.7rem;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: background 0.2s ease;
+}
+
+.book-btn:hover {
+  background-color: #142a5d;
+}
+
+/* ⬅ Back Button */
+.back-btn-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 2.5rem;
+  width: 100%;
+}
+
+.back-btn {
+  background-color: #ff5e5e;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: background 0.2s ease;
+}
+
+.back-btn:hover {
+  background-color: #e14a4a;
+}
+
+/* 💬 Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(2px);
+  z-index: 9999;
+}
+
+/* 💡 Modal Content */
+.modal-content {
+  background: #ffffff;
+  width: 90%;
+  max-width: 420px;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+  padding: 2rem;
+  text-align: center;
+  animation: popupFade 0.3s ease-in-out;
+}
+
+/* ✨ Smooth popup animation */
+@keyframes popupFade {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* 📱 Mobile Responsive Adjustments */
+@media (max-width: 768px) {
+  .service-header h1 {
+    font-size: 1.6rem;
+  }
+
+  .workers-grid {
+    gap: 1.2rem;
+  }
+
+  .worker-card {
+    width: 90%;
+  }
+
+  .modal-content {
+    width: 95%;
+    padding: 1.5rem;
+  }
+}
+.modal-content.large {
+  max-width: 700px;
+  text-align: left;
+}
+
+.modal-content ul {
+  margin-top: 0.5rem;
+  padding-left: 1.5rem;
+}
+
+.modal-content ul li {
+  font-size: 0.95rem;
+  color: #333;
+  line-height: 1.5;
+}
+
+.modal-content input[type="date"],
+.modal-content input[type="time"] {
+  width: 100%;
+  margin-top: 0.8rem;
+  padding: 0.6rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.modal-overlay {
+  animation: fadeIn 0.25s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
